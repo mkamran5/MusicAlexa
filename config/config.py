@@ -4,9 +4,11 @@
 
 # Kanged By © @Dr_Assad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali
+# Owner Asad Ali 
 # Harshit Sharma
 # All rights reserved. © Alisha © Alexa © Yukki
+
+
 
 
 import re
@@ -18,22 +20,28 @@ from pyrogram import filters
 
 load_dotenv()
 
-API_ID = int(getenv("API_ID", ""))
-API_HASH = getenv("API_HASH")
+API_ID = int(getenv("API_ID", "8116361"))
+API_HASH = getenv("API_HASH", "3052a25fccbcac402456dd864ed022fd")
 
-BOT_TOKEN = getenv("BOT_TOKEN")
+BOT_TOKEN = getenv("BOT_TOKEN", "2026289263:AAEtlnHjrkDWGMREXE-fMkjRp5cktc7_Vy0")
 
-MONGO_DB_URI = getenv("MONGO_DB_URI", None)
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://AlexaMusic:AlexaMusic@cluster0.ev6cioc.mongodb.net/?retryWrites=true&w=majority")
 
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", "900"))
+DURATION_LIMIT_MIN = int(
+    getenv("DURATION_LIMIT", "900")
+)
 
-SONG_DOWNLOAD_DURATION = int(getenv("SONG_DOWNLOAD_DURATION_LIMIT", "180"))
+SONG_DOWNLOAD_DURATION = int(
+    getenv("SONG_DOWNLOAD_DURATION_LIMIT", "180")
+)
 
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", ""))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1001700938995"))
 
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME")
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "乛𝘼𝙇𝙀𝙓𝘼🕊️⃝🦋⁪⁬𝙈𝙐𝙎𝙄𝘾")
 
-OWNER_ID = list(map(int, getenv("OWNER_ID", "").split()))
+OWNER_ID = list(
+    map(int, getenv("OWNER_ID", "2042185317").split())
+)
 
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
@@ -43,20 +51,28 @@ HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/Jankarikiduniya/AlexaMusic",
+    "https://github.com/mkamran5/MusicAlexa",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 
 GIT_TOKEN = getenv("GIT_TOKEN", None)
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", None)
-SUPPORT_GROUP = getenv("SUPPORT_GROUP", None)
+SUPPORT_CHANNEL = getenv(
+    "SUPPORT_CHANNEL", "https://t.me/AsadSupport"
+)
+SUPPORT_GROUP = getenv(
+    "SUPPORT_GROUP", "https://t.me/Shayri_Music_Lovers"
+)
 
-AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", None)
+AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", "True")
 
-AUTO_LEAVE_ASSISTANT_TIME = int(getenv("ASSISTANT_LEAVE_TIME", "5400"))
+AUTO_LEAVE_ASSISTANT_TIME = int(
+    getenv("ASSISTANT_LEAVE_TIME", "11500")
+)
 
-AUTO_SUGGESTION_TIME = int(getenv("AUTO_SUGGESTION_TIME", "5400"))
+AUTO_SUGGESTION_TIME = int(
+    getenv("AUTO_SUGGESTION_TIME", "5400")
+)
 
 AUTO_DOWNLOADS_CLEAR = getenv("AUTO_DOWNLOADS_CLEAR", None)
 
@@ -79,14 +95,20 @@ SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "30"))
 
 PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", "25"))
 
-CLEANMODE_DELETE_MINS = int(getenv("CLEANMODE_MINS", "5"))
+CLEANMODE_DELETE_MINS = int(
+    getenv("CLEANMODE_MINS", "5")
+)
 
-TG_AUDIO_FILESIZE_LIMIT = int(getenv("TG_AUDIO_FILESIZE_LIMIT", "104857600"))
+TG_AUDIO_FILESIZE_LIMIT = int(
+    getenv("TG_AUDIO_FILESIZE_LIMIT", "104857600")
+)
 
-TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", "1073741824"))
+TG_VIDEO_FILESIZE_LIMIT = int(
+    getenv("TG_VIDEO_FILESIZE_LIMIT", "1073741824")
+)
 # https://www.gbmb.org/mb-to-bytes
 
-STRING1 = getenv("STRING_SESSION", None)
+STRING1 = getenv("STRING_SESSION", "BAAwpLzVgW6GvlMRoFliPx7jsf3f8aCQPFhLn0k2NbzMo4Buw6OET-zN_Kclc-_l94oND6F2cMZ1r5bJH6X9jDy7tSXprV9Vx2gfc5Di_4UM2qXlaPKpMID30QfMb6HfH3gzHk5gKBt05aCuMdIlRJrDGl3MPcMOuiYvII9hbudmJY6Ox7UGnuLP-yJaf-qDHmUkl-e8nxaiM0j3-j7ub1wlfTpuMfEzJxjJqdNysMfvsYmgLbbDTfVP0ozzjVH-Y-Az2n2YggWqlSxvQLLOolH8qY2VELrR1QraO2AP6dUxE4duWdwlBKUeT7JPfFxka8yLBNq-vP1URvD5bMQUg-LPdzD4tAA")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
@@ -95,7 +117,7 @@ STRING5 = getenv("STRING_SESSION5", None)
 BANNED_USERS = filters.user()
 YTDOWNLOADER = 1
 LOG = 2
-LOG_FILE_NAME = "randilogs.txt"
+LOG_FILE_NAME = "Alexalog.txt"
 adminlist = {}
 lyrical = {}
 chatstats = {}
@@ -104,9 +126,7 @@ clean = {}
 
 autoclean = []
 
-START_IMG_URL = getenv(
-    "START_IMG_URL", "https://telegra.ph/file/f6064bc90cc76e59015b2.jpg"
-)
+START_IMG_URL = getenv("START_IMG_URL", "https://telegra.ph/file/d593c6064ff7657d0c714.jpg")
 
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
@@ -171,11 +191,16 @@ SPOTIFY_PLAYLIST_IMG_URL = getenv(
 
 def time_to_seconds(time):
     stringt = str(time)
-    return sum(int(x) * 60**i for i, x in enumerate(reversed(stringt.split(":"))))
+    return sum(
+        int(x) * 60**i
+        for i, x in enumerate(reversed(stringt.split(":")))
+    )
 
 
 DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:00"))
-SONG_DOWNLOAD_DURATION_LIMIT = int(time_to_seconds(f"{SONG_DOWNLOAD_DURATION}:00"))
+SONG_DOWNLOAD_DURATION_LIMIT = int(
+    time_to_seconds(f"{SONG_DOWNLOAD_DURATION}:00")
+)
 
 if SUPPORT_CHANNEL:
     if not re.match("(?:http|https)://", SUPPORT_CHANNEL):
