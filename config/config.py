@@ -6,7 +6,7 @@
 # Rocks © @Shayri_Music_Lovers
 # Owner Asad Ali 
 # Harshit Sharma
-# All rights reserved. © Alisha © Alexa © Yukki
+# All rights reserved. © Alexa © Yukki
 
 
 
@@ -20,12 +20,12 @@ from pyrogram import filters
 
 load_dotenv()
 
-API_ID = int(getenv("API_ID", "8116361"))
-API_HASH = getenv("API_HASH", "3052a25fccbcac402456dd864ed022fd")
+API_ID = int(getenv("API_ID", ""))
+API_HASH = getenv("API_HASH")
 
-BOT_TOKEN = getenv("BOT_TOKEN", "2026289263:AAEtlnHjrkDWGMREXE-fMkjRp5cktc7_Vy0")
+BOT_TOKEN = getenv("BOT_TOKEN")
 
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://AlexaMusic:AlexaMusic@cluster0.ev6cioc.mongodb.net/?retryWrites=true&w=majority")
+MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 
 DURATION_LIMIT_MIN = int(
     getenv("DURATION_LIMIT", "900")
@@ -35,39 +35,37 @@ SONG_DOWNLOAD_DURATION = int(
     getenv("SONG_DOWNLOAD_DURATION_LIMIT", "180")
 )
 
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1001700938995"))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", ""))
 
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "乛𝘼𝙇𝙀𝙓𝘼🕊️⃝🦋⁪⁬𝙈𝙐𝙎𝙄𝘾")
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME")
 
 OWNER_ID = list(
-    map(int, getenv("OWNER_ID", "2042185317").split())
+    map(int, getenv("OWNER_ID", "").split())
 )
 
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
-
-BOT_ID = getenv("BOT_ID")
 
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/mkamran5/MusicAlexa",
+    "https://github.com/Jankarikiduniya/AlexaMusic",
 )
-UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
+UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 
 GIT_TOKEN = getenv("GIT_TOKEN", None)
 
 SUPPORT_CHANNEL = getenv(
-    "SUPPORT_CHANNEL", "https://t.me/AsadSupport"
+    "SUPPORT_CHANNEL", None
 )
 SUPPORT_GROUP = getenv(
-    "SUPPORT_GROUP", "https://t.me/Shayri_Music_Lovers"
+    "SUPPORT_GROUP", None
 )
 
-AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", "True")
+AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", None)
 
 AUTO_LEAVE_ASSISTANT_TIME = int(
-    getenv("ASSISTANT_LEAVE_TIME", "11500")
+    getenv("ASSISTANT_LEAVE_TIME", "5400")
 )
 
 AUTO_SUGGESTION_TIME = int(
@@ -108,7 +106,7 @@ TG_VIDEO_FILESIZE_LIMIT = int(
 )
 # https://www.gbmb.org/mb-to-bytes
 
-STRING1 = getenv("STRING_SESSION", "BAAwpLzVgW6GvlMRoFliPx7jsf3f8aCQPFhLn0k2NbzMo4Buw6OET-zN_Kclc-_l94oND6F2cMZ1r5bJH6X9jDy7tSXprV9Vx2gfc5Di_4UM2qXlaPKpMID30QfMb6HfH3gzHk5gKBt05aCuMdIlRJrDGl3MPcMOuiYvII9hbudmJY6Ox7UGnuLP-yJaf-qDHmUkl-e8nxaiM0j3-j7ub1wlfTpuMfEzJxjJqdNysMfvsYmgLbbDTfVP0ozzjVH-Y-Az2n2YggWqlSxvQLLOolH8qY2VELrR1QraO2AP6dUxE4duWdwlBKUeT7JPfFxka8yLBNq-vP1URvD5bMQUg-LPdzD4tAA")
+STRING1 = getenv("STRING_SESSION", None)
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
@@ -117,7 +115,7 @@ STRING5 = getenv("STRING_SESSION5", None)
 BANNED_USERS = filters.user()
 YTDOWNLOADER = 1
 LOG = 2
-LOG_FILE_NAME = "Alexalog.txt"
+LOG_FILE_NAME = "randilogs.txt"
 adminlist = {}
 lyrical = {}
 chatstats = {}
@@ -126,7 +124,7 @@ clean = {}
 
 autoclean = []
 
-START_IMG_URL = getenv("START_IMG_URL", "https://telegra.ph/file/d593c6064ff7657d0c714.jpg")
+START_IMG_URL = getenv("START_IMG_URL", "https://telegra.ph/file/654ddaf472f18b799600b.jpg")
 
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
@@ -306,3 +304,9 @@ if TELEGRAM_VIDEO_URL:
                 "[ERROR] - Your TELEGRAM_VIDEO_URL url is wrong. Please ensure that it starts with https://"
             )
             sys.exit()
+
+
+if not MUSIC_BOT_NAME.isascii():
+    print(
+        "[ERROR] - Use any special characters or Special font for MUSIC_BOT_NAME var ab bot ko jhaat kuch farak ni padega."
+    )
