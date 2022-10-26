@@ -1,2 +1,1 @@
-worker: Dockerfile
-worker: bash start
+worker: python3 -m AlexaMusic
