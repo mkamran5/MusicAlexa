@@ -1,4 +1,7 @@
-FROM nikolaik/python-nodejs:python3.9-nodejs18
+FROM python:3.9-slim-buster
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+RUN source ~/.bashrc
+RUN nvm install v18
 RUN apt-get update -y && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends ffmpeg \
     && apt-get clean \
