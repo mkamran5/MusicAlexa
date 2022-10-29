@@ -1,1 +1,5 @@
-web: bash Dockerfile
+build:
+  docker:
+    worker: Dockerfile
+run:
+  worker: bash star
