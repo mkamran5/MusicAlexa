@@ -51,7 +51,7 @@ HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/TheTeamAlexa/AlexaMusic",
+    "https://github.com/mkamran5/MusicAlexa",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 
