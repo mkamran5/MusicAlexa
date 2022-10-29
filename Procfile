@@ -1,5 +1,1 @@
-build:
-  docker:
-    worker: Dockerfile
-run:
-  worker: bash star
+web: python3 -m AlexaMusic
