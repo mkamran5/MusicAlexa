@@ -1,1 +1,5 @@
-web: python3 -m AlexaMusic
+build:
+  docker:
+    web: Dockerfile
+run:
+  web: bash start
